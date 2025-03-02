@@ -2,25 +2,106 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import App from './App';
+import translations from '../i18n/index.json';
 
 describe('Module 4 Project Tests', () => {
 	describe('English Language', () => {
+		beforeEach(() => {
+			render(<App lang="en" />);
+		});
 		/*
       👉 TASK 1
 
       One test is done for you as an example.
     */
-		test(`TEXT_HEADING_CREATE_ACCOUNT is visible`, () => {
-			render(<App lang="en" />);
+		test(`${translations[0]} is visible`, () => {
 			expect(screen.getByText('Create an Account')).toBeVisible();
+		});
+		test(`${translations[1]} is visible`, () => {
+			expect(screen.getByText('JavaScript')).toBeVisible();
+		});
+		test(`${translations[2]} is visible`, () => {
+			expect(screen.getByText('Rust')).toBeVisible();
+		});
+		test(`${translations[3]} is visible`, () => {
+			expect(screen.getByText('-- Select favorite food --')).toBeVisible();
+		});
+		test(`${translations[4]} is visible`, () => {
+			expect(screen.getByText('Pizza')).toBeVisible();
+		});
+		test(`${translations[5]} is visible`, () => {
+			expect(screen.getByText('Spaghetti')).toBeVisible();
+		});
+		test(`${translations[6]} is visible`, () => {
+			expect(screen.getByText('Broccoli')).toBeVisible();
+		});
+		test(`${translations[7]} is visible`, () => {
+			expect(screen.getByText('Send')).toBeVisible();
+		});
+		test(`${translations[8]} is visible`, () => {
+			expect(screen.getByText('Favorite language:')).toBeVisible();
+		});
+		test(`${translations[9]} is visible`, () => {
+			expect(screen.getByText('Username:')).toBeVisible();
+		});
+		test(`${translations[10]} is visible`, () => {
+			expect(screen.getByText('Favorite food:')).toBeVisible();
+		});
+		test(`${translations[11]} is visible`, () => {
+			expect(screen.getByText('Agree to our terms')).toBeVisible();
+		});
+		test(`${translations[12]} is visible`, () => {
+			expect(screen.getByText('Type username')).toBeVisible();
 		});
 	});
 	describe('Spanish Language', () => {
+		beforeEach(() => {
+			render(<App lang="esp" />);
+		});
 		/*
       👉 TASK 3
-
+    
       This is done after making the UI multilingual.
     */
+		test('${translations[0]} is visible', () => {
+			expect(screen.getByText('Crear Cuenta')).toBeVisible();
+		});
+		test(`${translations[1]} is visible`, () => {
+			expect(screen.getByText('JavaScript')).toBeVisible();
+		});
+		test(`${translations[2]} is visible`, () => {
+			expect(screen.getByText('Rust')).toBeVisible();
+		});
+		test(`${translations[3]} is visible`, () => {
+			expect(screen.getByText('-- Elija su plato favorito --')).toBeVisible();
+		});
+		test(`${translations[4]} is visible`, () => {
+			expect(screen.getByText('Pizza')).toBeVisible();
+		});
+		test(`${translations[5]} is visible`, () => {
+			expect(screen.getByText('Espaguetis')).toBeVisible();
+		});
+		test(`${translations[6]} is visible`, () => {
+			expect(screen.getByText('Brócolis')).toBeVisible();
+		});
+		test(`${translations[7]} is visible`, () => {
+			expect(screen.getByText('Enviar')).toBeVisible();
+		});
+		test(`${translations[8]} is visible`, () => {
+			expect(screen.getByText('Lenguaje favorito:')).toBeVisible();
+		});
+		test(`${translations[9]} is visible`, () => {
+			expect(screen.getByText('Usuario:')).toBeVisible();
+		});
+		test(`${translations[10]} is visible`, () => {
+			expect(screen.getByText('Plato favorito:')).toBeVisible();
+		});
+		test(`${translations[11]} is visible`, () => {
+			expect(screen.getByText('Acepto condiciones')).toBeVisible();
+		});
+		test(`${translations[12]} is visible`, () => {
+			expect(screen.getByText('Escriba usuario')).toBeVisible();
+		});
 	});
 	describe('getEntriesByKeyPrefix', () => {
 		test('can extract the correct data', () => {
