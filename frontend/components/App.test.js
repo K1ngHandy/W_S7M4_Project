@@ -1,30 +1,30 @@
-import React from 'react'
-import { render, screen } from '@testing-library/react'
-import '@testing-library/jest-dom'
-import App from './App'
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
+import App from './App';
 
 describe('Module 4 Project Tests', () => {
-  describe('English Language', () => {
-    /*
+	describe('English Language', () => {
+		/*
       👉 TASK 1
 
       One test is done for you as an example.
     */
-    test(`TEXT_HEADING_CREATE_ACCOUNT is visible`, () => {
-      render(<App lang="en" />)
-      expect(screen.getByText("Create an Account")).toBeVisible()
-    })
-  })
-  describe('Spanish Language', () => {
-    /*
+		test(`TEXT_HEADING_CREATE_ACCOUNT is visible`, () => {
+			render(<App lang="en" />);
+			expect(screen.getByText('Create an Account')).toBeVisible();
+		});
+	});
+	describe('Spanish Language', () => {
+		/*
       👉 TASK 3
 
       This is done after making the UI multilingual.
     */
-  })
-  describe('getEntriesByKeyPrefix', () => {
-    test('can extract the correct data', () => {
-    /*
+	});
+	describe('getEntriesByKeyPrefix', () => {
+		test('can extract the correct data', () => {
+			/*
       👉 TASK 4 part 2
 
       Implement the function `getEntriesByKeyPrefix` below
@@ -35,11 +35,11 @@ describe('Module 4 Project Tests', () => {
       the tests are written _before_ implementing
       the function being tested.
     */
-    })
-  })
-})
+		});
+	});
+});
 function getEntriesByKeyPrefix(obj, keyPrefix) {
-  /*
+	/*
     👉 TASK 4 part 1
 
     Implement a function that takes as first argument an object `obj` such as this:
